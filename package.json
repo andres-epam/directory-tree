@@ -1,0 +1,24 @@
+{
+  "name": "directory-tree",
+  "version": "1.0.0",
+  "description": "Directory tree challenge",
+  "main": "lib",
+  "scripts": {
+    "s": "env-cmd -f ./.env npm run start:local",
+    "start:local": "nodemon -L --inspect",
+    "test": "NODE_ENV=testing jest",
+    "test:dev": "env-cmd -f ./.env jest --watch --runInBand --coverage"
+  },
+  "keywords": [],
+  "author": "Andrés Escalante",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "env-cmd": "^10.1.0",
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "winston": "^3.7.2"
+  }
+}
