@@ -5,20 +5,52 @@
   "main": "lib",
   "scripts": {
     "s": "env-cmd -f ./.env npm run start:local",
+    "t": "npm run test:dev",
     "start:local": "nodemon -L --inspect",
+    "start": "node lib",
     "test": "NODE_ENV=testing jest",
-    "test:dev": "env-cmd -f ./.env jest --watch --runInBand --coverage"
+    "test:dev": "env-cmd -f ./.env jest --watch --runInBand --coverage",
+    "lint": "eslint \"**/*.js\"",
+    "format": "prettier --write **/*.js",
+    "format-check": "prettier --check **/*.js"
   },
   "keywords": [],
   "author": "Andrés Escalante",
   "license": "ISC",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^28.1.1",
     "dotenv": "^16.0.1",
     "env-cmd": "^10.1.0",
+    "eslint": "^8.17.0",
     "jest": "^28.1.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2"
   },
   "dependencies": {
     "winston": "^3.7.2"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/console.js",
+      "!**/node_modules/**",
+      "!**/build/**",
+      "!**/migrations/**",
+      "!**/config/**",
+      "!**/scripts/**"
+    ],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
   }
 }
