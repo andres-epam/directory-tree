@@ -11,7 +11,7 @@
 ### Dependencies
 Run `npm install` from rootpath of the project.
 
-| Dependencies | version | Usage |  |
+| Dependencies | Version | Usage |  |
 | --- | --- |  --- | --- | 
 | `winston` | ^3.7.2 | Logs the output |
 
@@ -113,11 +113,13 @@ To execute the app, there are 3 ways to do it, feel free to use any you want:
 
 ## Test
 
-To excecute the unit tests run `npm run test:dev`
+To excecute the unit tests
+- Set `NODE_ENV` environment variable to `testing`
+- Run `npm run test:dev`
 
 The current coverage results:
 
-```ts
+```js
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
