@@ -1,11 +1,3 @@
 {
-   "pizza": {
-      "tomatoes": {
-         "primary": {}
-      },
-      "cheese": {
-         "milk": {}
-      }
-   },
-   "avocado": {}
+   
 }
