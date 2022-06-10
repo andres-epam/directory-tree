@@ -48,3 +48,17 @@ exports.directoryFromFile = {
     }
   }
 };
+
+exports.directoryListMock = {
+  foods: {
+    grains: {},
+    fruits: {
+      apples: {
+        fuji: {}
+      }
+    },
+    vegetables: {
+      squash: {}
+    }
+  }
+};

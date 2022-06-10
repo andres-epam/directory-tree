@@ -11,7 +11,7 @@ describe('Create Directory Service', () => {
       }
     }));
 
-    const { create } = require('../../../lib/services/directory/create');
+    const { create } = require('../../../lib/services/directory');
 
     const expected = {
       fruits: {},
@@ -38,7 +38,7 @@ describe('Create Directory Service', () => {
         ...JSON.parse(JSON.stringify(directoryCreateDeleteInitialMock))
       }
     }));
-    const { create } = require('../../../lib/services/directory/create');
+    const { create } = require('../../../lib/services/directory');
 
     const path = 'vehicle/car/wheeL/steel/carbon';
     const expectedMessage = `Cannot create ${path} - wheeL does not exist`;

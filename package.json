@@ -4,9 +4,7 @@
   "description": "Directory tree challenge",
   "main": "lib",
   "scripts": {
-    "s": "env-cmd -f ./.env npm run start:local",
-    "t": "npm run test:dev",
-    "start:local": "nodemon -L --inspect",
+    "start:dev": "env-cmd -f ./.env nodemon -L --inspect",
     "start": "node lib",
     "test": "NODE_ENV=testing jest",
     "test:dev": "env-cmd -f ./.env jest --watch --runInBand --coverage",
