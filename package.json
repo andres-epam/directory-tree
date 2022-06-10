@@ -7,7 +7,7 @@
     "start:dev": "env-cmd -f ./.env nodemon -L --inspect",
     "start": "node lib",
     "test": "NODE_ENV=testing jest",
-    "test:dev": "env-cmd -f ./.env jest --watch --runInBand --coverage",
+    "test:dev": "env-cmd -f ./.env jest --coverage",
     "lint": "eslint \"**/*.js\"",
     "format": "prettier --write **/*.js",
     "format-check": "prettier --check **/*.js"
@@ -39,12 +39,11 @@
     },
     "collectCoverageFrom": [
       "**/*.js",
-      "!**/console.js",
+      "!**/directories.js",
       "!**/node_modules/**",
       "!**/build/**",
-      "!**/migrations/**",
       "!**/config/**",
-      "!**/scripts/**"
+      "!**/coverage/**"
     ],
     "testEnvironment": "node",
     "transform": {
