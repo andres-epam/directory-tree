@@ -2,11 +2,11 @@ name: Ci
 
 on:
   pull_request:
-    branches: ["feature/*"]
+    branches: ["feature/*", "refactor/*"]
     paths-ignore:
       - "**.md"
   push:
-    branches: ["feature/*", trunk]
+    branches: ["feature/*", "refactor/*",  trunk]
     paths-ignore:
       - "**.md"
 

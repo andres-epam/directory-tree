@@ -1,19 +1,18 @@
-const { directoryListMock } = require('../../mocks/directory');
+const { logger } = require('../../../lib/logger');
+const { DirectoryRepository } = require('../../../lib/repositories/directory');
+const { list } = require('../../../lib/services/directory');
+const { listOutputMock } = require('../../mocks/directory');
 
-describe('Create Directory Service', () => {
-  beforeEach(() => {
-    jest.resetModules();
-  });
+jest.mock('../../../lib/directory', () => ({ directory: {} }));
 
-  test('should create a directory', () => {
-    jest.doMock('../../../lib/directory', () => ({
-      directory: {
-        ...JSON.parse(JSON.stringify(directoryListMock))
-      }
-    }));
-    const spy = jest.spyOn(console, 'log');
-    const { list } = require('../../../lib/services/directory');
-    expect(list()).toBeDefined();
+describe('List Directory Service', () => {
+  test('should list a directory', () => {
+    DirectoryRepository.prototype.list = jest.fn(() => listOutputMock);
+
+    const spy = jest.spyOn(logger, 'info');
+    const result = list();
+    expect(result).toBeDefined();
     expect(spy).toHaveBeenCalled();
+    expect(result).toEqual(listOutputMock);
   });
 });
