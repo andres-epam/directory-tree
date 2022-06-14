@@ -40,9 +40,9 @@ The initial directory structure you can find it at path `./directories/<environm
                 // In this case, the initial value is an empty directory.
 }
 ```
-The app reads the directory initial value from the textfile, then converts it in a singleton Object called `directory` localted in `./lib/directory`, it means that `directory` has a unique instance.
+The app reads the directory initial value from the text file, then converts it in a singleton object named `directory` located in `./lib/directory`, it means that `directory` has an unique instance.
 
-At same directory.txt location, there is another textfile called `instructions.txt`, it's in charged of instructions that will be excecuted each one by line, it can be modified giving to app whatever instruction you want, the initial value is:
+At same directory.txt location, there is another text file called `instructions.txt`, it's in charge of instructions that will be executed each one by line, it can be modified giving to app whatever instruction you want, the initial value is:
 
 ```js
 CREATE fruits
@@ -63,16 +63,16 @@ DELETE foods/fruits/apples
 LIST
 ```
 
-I interprated each instruction ine as a HTTP request in which `CREATE`, `LIST`, `LIST`, `DELETE` would be as `POST`, `GET`, `PATH/PUT` and `DELETE` HTTP request methods, so we can say that the app do calls in batch.
+I interpreted each instruction line as a HTTP request in which `CREATE`, `LIST`, `LIST`, `DELETE` would be as `POST`, `GET`, `PATH/PUT` and `DELETE` HTTP request methods, so we can say that the app do calls in batch.
 
-The app is made in a MVC design patten, the controller layer, in charged of the comunication between backend and the view, in this case, we don't have a proper controller layer nevertheless in `./lib/server` we have a function called `executeInstructions` that apply `controller` functionality, it receives each instruction, then depending of the instruction type, it pass through his respective service method.
+The app is made in a MVC design patten, the controller layer, in charge of the communication between backend and the view, in this case, we don't have a proper controller layer nevertheless in `./lib/server` we have a function called `executeInstructions` that apply `controller` functionality, it receives each instruction, then depending of the instruction type, it pass through his respective service method.
 
-The `service` layers located in `./lib/services/directory` in charged of the bussiness logic and the `repository` layer located in `./lib/repository/directory` in charged of all core CRUD operations. In this case, we don't a have a database to these operations, instead we have the singleton object, so the repository is the unique one that directly modifies the `directory` singleton object.
+The `service` layers located in `./lib/services/directory` in charge of the business logic and the `repository` layer located in `./lib/repository/directory` in charge of all core CRUD operations. In this case, we don't a have a database to these operations, instead we have the singleton object, so the repository is the unique one that directly modifies the `directory` singleton object.
 
-Every instruction type, has been developed with recursive methods that constantly iterate and check the each given directory `path` with the singleton also called `target` as param. 
+Every instruction type has been developed with recursive methods that constantly iterate and check the each given directory `path` with the singleton also called `target` as param. 
 The app also has custom errors for grouping and handling same error types.
 
-Analysing in a real production app, it manages `DEV`, `QA` and `PROD` environments, we can set configurations for every environment in `./config/<environtment>`, then just set the env variable `NODE_ENV` to `development`, `testing` or `production` in `.env` to adapt the configurations;
+Analyzing in a real production app, it manages `DEV`, `QA` and `PROD` environments, we can set configurations for every environment in `./config/<environment>`, then just set the env variable `NODE_ENV` to `development`, `testing` or `production` in `.env` to adapt the configurations;
 
 The app integrates a logging system by Winston dependency, if app is on `prod` environment, then the format changes configured to that environment.
 
@@ -88,9 +88,7 @@ CREATE foods/fruits/pears
 
 It's installed ESLint for checking rules configured in the app, it's also installed Prettier for checking the code format/styling.
 
-These 2 checks are excecuted in the CI pipeline along with unit tests with a coverage requirement of 80% or higher.
-
-
+These 2 checks are executed in the CI pipeline along with unit tests with a coverage requirement of 80% or higher.
 
 ## Requeriments
 
