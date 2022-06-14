@@ -74,7 +74,7 @@ The app also has custom errors for grouping and handling same error types.
 
 Analyzing in a real production app, it manages `DEV`, `QA` and `PROD` environments, we can set configurations for every environment in `./config/<environment>`, then just set the env variable `NODE_ENV` to `development`, `testing` or `production` in `.env` to adapt the configurations;
 
-The app integrates a logging system by Winston dependency, if app is on `prod` environment, then the format changes configured to that environment.
+The app integrates a logging system by `Winston` dependency, which allows us to completely customize our logs, we can choose our logs destination, for example being saved in a `.log` file in any location, customize the styling, etc. In this case we have only customized the logs format depending on the environment type we are on, if app is on `prod` environment, then the format changes configured to that environment.
 
 Example log format in `dev`/`qa` environments:
 ```js
