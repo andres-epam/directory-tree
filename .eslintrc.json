@@ -1,5 +1,12 @@
 {
-    "parserOptions": {
-        "ecmaVersion": 2020
-    }
+  "parserOptions": {
+    "ecmaVersion": 13
+  },
+  "rules": {
+    "quotes": ["error", "single"],
+    "no-unused-expressions": "error",
+    "no-unused-vars": "error",
+    "no-unused-private-class-members": "error",
+    "no-unused-labels": "error"
+  }
 }
