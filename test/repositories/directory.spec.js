@@ -1,12 +1,13 @@
-const { CREATE_ERROR, MOVE_ERROR, DELETE_ERROR } = require('../../../lib/constants/operationTypes');
-const { DirectoryError, DirectoryNotFoundError } = require('../../../lib/errors/directory');
+const { CREATE_ERROR, MOVE_ERROR, DELETE_ERROR } = require('../../lib/constants/operationTypes');
+const { DirectoryError } = require('../../lib/errors/directoryError');
+const { DirectoryNotFoundError } = require('../../lib/errors/directoryNotFoundError');
 const {
   directoryCreateDeleteInitialMock,
   directoryListMock,
   directoryMoveInitialSuccessMock,
   directoryMoveInitialFailMock,
   listOutputMock
-} = require('../../mocks/directory');
+} = require('../mocks/directory');
 
 describe('Create | Directory Repository', () => {
   let repository;
@@ -16,13 +17,13 @@ describe('Create | Directory Repository', () => {
   });
 
   test('should create a directory', () => {
-    jest.doMock('../../../lib/directory', () => ({
+    jest.doMock('../../lib/directory', () => ({
       directory: {
         ...JSON.parse(JSON.stringify(directoryCreateDeleteInitialMock))
       }
     }));
 
-    const { DirectoryRepository } = require('../../../lib/repositories/directory');
+    const { DirectoryRepository } = require('../../lib/repositories/directory');
     repository = new DirectoryRepository();
 
     const expected = {
@@ -45,12 +46,12 @@ describe('Create | Directory Repository', () => {
   });
 
   test('should fail creating a directory', () => {
-    jest.doMock('../../../lib/directory', () => ({
+    jest.doMock('../../lib/directory', () => ({
       directory: {
         ...JSON.parse(JSON.stringify(directoryCreateDeleteInitialMock))
       }
     }));
-    const { DirectoryRepository } = require('../../../lib/repositories/directory');
+    const { DirectoryRepository } = require('../../lib/repositories/directory');
     repository = new DirectoryRepository();
 
     const path = 'vehicle/car/wheeL/steel/carbon';
@@ -65,12 +66,12 @@ describe('List | Directory Repository', () => {
 
   beforeEach(() => {
     jest.resetModules();
-    jest.doMock('../../../lib/directory', () => ({
+    jest.doMock('../../lib/directory', () => ({
       directory: {
         ...JSON.parse(JSON.stringify(directoryListMock))
       }
     }));
-    const { DirectoryRepository } = require('../../../lib/repositories/directory');
+    const { DirectoryRepository } = require('../../lib/repositories/directory');
     repository = new DirectoryRepository();
   });
 
@@ -87,13 +88,13 @@ describe('Move | Directory Repository', () => {
   });
 
   test('should move a directory', () => {
-    jest.doMock('../../../lib/directory', () => ({
+    jest.doMock('../../lib/directory', () => ({
       directory: {
         ...directoryMoveInitialSuccessMock
       }
     }));
 
-    const { DirectoryRepository } = require('../../../lib/repositories/directory');
+    const { DirectoryRepository } = require('../../lib/repositories/directory');
     repository = new DirectoryRepository();
 
     const expected = {
@@ -116,12 +117,12 @@ describe('Move | Directory Repository', () => {
   });
 
   test('should fail moving a directory', () => {
-    jest.doMock('../../../lib/directory', () => ({
+    jest.doMock('../../lib/directory', () => ({
       directory: {
         ...directoryMoveInitialFailMock
       }
     }));
-    const { DirectoryRepository } = require('../../../lib/repositories/directory');
+    const { DirectoryRepository } = require('../../lib/repositories/directory');
     repository = new DirectoryRepository();
 
     let fromPath = 'vehicle/car/wheeL/steel/carbon';
@@ -151,13 +152,13 @@ describe('Delete | Directory Repository', () => {
     jest.resetModules();
   });
   test('should delete a directory', () => {
-    jest.doMock('../../../lib/directory', () => ({
+    jest.doMock('../../lib/directory', () => ({
       directory: {
         ...JSON.parse(JSON.stringify(directoryCreateDeleteInitialMock))
       }
     }));
 
-    const { DirectoryRepository } = require('../../../lib/repositories/directory');
+    const { DirectoryRepository } = require('../../lib/repositories/directory');
     repository = new DirectoryRepository();
 
     const expected = {
@@ -172,13 +173,13 @@ describe('Delete | Directory Repository', () => {
   });
 
   test('should fail deleting a directory', () => {
-    jest.doMock('../../../lib/directory', () => ({
+    jest.doMock('../../lib/directory', () => ({
       directory: {
         ...JSON.parse(JSON.stringify(directoryCreateDeleteInitialMock))
       }
     }));
 
-    const { DirectoryRepository } = require('../../../lib/repositories/directory');
+    const { DirectoryRepository } = require('../../lib/repositories/directory');
     repository = new DirectoryRepository();
 
     let path = 'vehicle/car/wheel/steel/carbon';

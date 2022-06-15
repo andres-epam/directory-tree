@@ -1,5 +1,5 @@
-const { CREATE_ERROR } = require('../../../lib/constants/operationTypes');
-const { DirectoryNotFoundError } = require('../../../lib/errors/directory');
+const { CREATE_ERROR } = require('../../lib/constants/operationTypes');
+const { DirectoryNotFoundError } = require('../../lib/errors/directoryNotFoundError');
 
 describe('DirectoryNotFoundError', () => {
   test('should throw a DirectoryNotFoundError', () => {
