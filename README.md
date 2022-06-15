@@ -90,12 +90,12 @@ Run `npm install` from rootpath of the project.
 | --- |
 | `N/A` |
 
-| DevDependencies | Version | Usage |  |
-| --- | --- |  --- | --- | 
-| `jest` | 28.1.1 | Unit tests |
-| `eslint` | 8.17.0 | Code analyzer |
-| `nodemon` | 2.0.16 | facilitates local app usage |
-| `prettier` | 2.6.2 | Code formatter |
+| DevDependenciesa | Version | Usage |
+| :---     |     ---      |          --- |
+| jest     | 28.1.1 | Unit tests                   |
+| eslint   | 8.17.0 | Code analyzer                |
+| nodemon  | 2.0.16 | Local app usage facilitation |
+| prettier | 2.6.2  | Code formatter               |
 
 ## Usage
 
