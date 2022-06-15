@@ -103,7 +103,7 @@ Run `npm install` from rootpath of the project.
 
 The input file is in which the app get the data instructions to be excecuted. 
 
-    The input is located in `./assets/instructions.txt`
+    The input is located in ./assets/instructions.txt
 
 The default input is: 
 ```js
