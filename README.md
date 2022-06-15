@@ -90,7 +90,7 @@ Run `npm install` from rootpath of the project.
 |    :---:     |
 |     N/A      |
 
-| DevDependenciesa | Version |        Usage        |
+| DevDependencies | Version |        Usage        |
 |   :---   |   ---  |            ---               |
 | jest     | 28.1.1 | Unit tests                   |
 | eslint   | 8.17.0 | Code analyzer                |
