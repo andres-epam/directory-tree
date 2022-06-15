@@ -35,9 +35,9 @@ In JSON representation I imagined it as:
 ```
 
 The initial directory structure you can find it at path `./assets/directory.json`. You will see that the initial value is 
-```json
+```
 {
-                // In this case, the initial value is an empty directory.
+           // In this case, the initial value is an empty directory.
 }
 ```
 The app reads the directory initial value from the json file, then converts it in js object named `directory` (kind of singleton object) located in `./lib/directory`, it means that `directory` has an unique instance.
