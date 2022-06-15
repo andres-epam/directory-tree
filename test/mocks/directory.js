@@ -89,3 +89,41 @@ DELETE fruits`;
 
 exports.listOutputMock =
   'foods\r\n' + ' fruits\r\n' + '  apples\r\n' + '   fuji\r\n' + ' grains\r\n' + ' vegetables\r\n' + '  squash';
+
+exports.instructionsParsedMock = [
+  'CREATE fruits\r',
+  'CREATE vegetables\r',
+  'CREATE grains\r',
+  'CREATE fruits/apples\r',
+  'CREATE fruits/apples/fuji\r',
+  'LIST\r',
+  'CREATE grains/squash\r',
+  'MOVE grains/squash vegetables\r',
+  'CREATE foods\r',
+  'MOVE grains foods\r',
+  'MOVE fruits foods\r',
+  'MOVE vegetables foods\r',
+  'LIST\r',
+  'DELETE fruits/apples\r',
+  'DELETE foods/fruits/apples\r',
+  'LIST'
+];
+
+exports.instructionsParsedFailMock = [
+  'CREATE fruits\r',
+  'CREATE vegetables\r',
+  'CREATE grains\r',
+  'CREATE fruits/apples\r',
+  'CREATE fruits/apples/fuji\r',
+  'LIST\r',
+  'CREATE grains/squash\r',
+  'MOVE grains/squash vegetables\r',
+  'CREATE foods\r',
+  'UPDATE grains foods\r',
+  'MOVE fruits foods\r',
+  'MOVE vegetables foods\r',
+  'LIST\r',
+  'DELETE fruits/apples\r',
+  'DELETE foods/fruits/apples\r',
+  'LIST'
+];

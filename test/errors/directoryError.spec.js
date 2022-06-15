@@ -1,5 +1,5 @@
-const { MOVE_ERROR } = require('../../../lib/constants/operationTypes');
-const { DirectoryError } = require('../../../lib/errors/directory');
+const { MOVE_ERROR } = require('../../lib/constants/operationTypes');
+const { DirectoryError } = require('../../lib/errors/directoryError');
 
 describe('DirectoryError', () => {
   test('should throw a DirectoryError', () => {

@@ -1,5 +1,5 @@
 const { CREATE_ERROR, MOVE_ERROR, DELETE_ERROR } = require('../../lib/constants/operationTypes');
-const { DirectoryNotFoundError } = require('../../lib/errors/directory');
+const { DirectoryNotFoundError } = require('../../lib/errors/directoryNotFoundError');
 const { findValueFromPath, sortObject, iterValidations } = require('../../lib/utils/directory');
 const { directoryListMock, directorySortedListMock } = require('../mocks/directory');
 
