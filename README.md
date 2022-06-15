@@ -86,12 +86,12 @@ These 2 checks are executed in the CI pipeline along with unit tests with a cove
 ### Dependencies
 Run `npm install` from rootpath of the project.
 
-| Dependencies 
-| --- |
-| `N/A` |
+| Dependencies |
+|    :---:     |
+|     N/A      |
 
-| DevDependenciesa | Version | Usage |
-| :---     |     ---      |          --- |
+| DevDependenciesa | Version |        Usage        |
+|   :---   |   ---  |            ---               |
 | jest     | 28.1.1 | Unit tests                   |
 | eslint   | 8.17.0 | Code analyzer                |
 | nodemon  | 2.0.16 | Local app usage facilitation |
