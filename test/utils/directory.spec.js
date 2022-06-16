@@ -29,14 +29,12 @@ describe('IterValidations | Directory Utils', () => {
   let currentDir;
   let path;
   let currentTarget;
-  let currentObjectLocation;
 
   test('should find to create a directory by given path', () => {
     originPath = 'foods/fruits/pears';
     currentDir = 'pears';
     path = 'pears';
     currentTarget = JSON.parse(JSON.stringify(directoryListMock.foods.fruits));
-    currentObjectLocation = currentTarget[currentDir];
 
     const expected = {
       ...directoryListMock.foods.fruits,
@@ -47,8 +45,7 @@ describe('IterValidations | Directory Utils', () => {
       path,
       target: currentTarget,
       originPath,
-      currentDir,
-      currentObjectLocation
+      currentDir
     };
     iterValidations.create(params);
     expect(currentTarget).toEqual(expected);
@@ -59,14 +56,12 @@ describe('IterValidations | Directory Utils', () => {
     currentDir = 'pears';
     path = 'fruits/pears';
     currentTarget = JSON.parse(JSON.stringify(directoryListMock.foods.fruits));
-    currentObjectLocation = currentTarget[currentDir];
 
     const params = {
       path,
       target: currentTarget,
       originPath,
-      currentDir,
-      currentObjectLocation
+      currentDir
     };
 
     const expectedErrorMessage = `Cannot ${CREATE_ERROR} ${originPath} - ${currentDir} does not exist`;
@@ -110,7 +105,6 @@ describe('IterValidations | Directory Utils', () => {
     currentDir = 'vegetables';
     originPath = 'foods/fruits';
     currentTarget = JSON.parse(JSON.stringify(directoryListMock.foods));
-    currentObjectLocation = currentTarget[currentDir];
     const targetToCopy = JSON.parse(JSON.stringify(directoryListMock.foods.fruits));
 
     const expected = {
@@ -126,8 +120,7 @@ describe('IterValidations | Directory Utils', () => {
       target: currentTarget,
       originFromPath: originPath,
       targetToCopy,
-      currentDir,
-      currentObjectLocation
+      currentDir
     };
 
     iterValidations.move(params);
@@ -140,7 +133,6 @@ describe('IterValidations | Directory Utils', () => {
     currentDir = 'pears';
     originPath = 'foods/fruits/pears';
     currentTarget = JSON.parse(JSON.stringify(directoryListMock.foods.fruits));
-    currentObjectLocation = currentTarget[currentDir];
     const targetToCopy = JSON.parse(JSON.stringify(directoryListMock.foods.vegetables));
 
     const params = {
@@ -148,8 +140,7 @@ describe('IterValidations | Directory Utils', () => {
       target: currentTarget,
       originFromPath: originPath,
       targetToCopy,
-      currentDir,
-      currentObjectLocation
+      currentDir
     };
 
     const expectedErrorMessage = `Cannot ${MOVE_ERROR} ${originPath} - ${currentDir} does not exist`;
@@ -165,7 +156,6 @@ describe('IterValidations | Directory Utils', () => {
     currentDir = 'fruits';
     path = 'fruits';
     currentTarget = JSON.parse(JSON.stringify(directoryListMock.foods));
-    currentObjectLocation = currentTarget[currentDir];
     const originTarget = JSON.parse(JSON.stringify(directoryListMock.foods));
 
     const expected = {
@@ -178,7 +168,6 @@ describe('IterValidations | Directory Utils', () => {
       target: currentTarget,
       originPath,
       currentDir,
-      currentObjectLocation,
       originTarget
     };
     iterValidations.delete(params);
@@ -192,14 +181,12 @@ describe('IterValidations | Directory Utils', () => {
     originPath = 'foods/fruits/pears';
     const originTarget = JSON.parse(JSON.stringify(directoryListMock));
     currentDir = 'pears';
-    currentObjectLocation = currentTarget[currentDir];
 
     const params = {
       path,
       target: currentTarget,
       originPath,
       currentDir,
-      currentObjectLocation,
       originTarget
     };
 

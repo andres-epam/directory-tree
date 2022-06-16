@@ -4,7 +4,6 @@
   "description": "Directory tree challenge",
   "main": "lib",
   "scripts": {
-    "start:dev": "nodemon",
     "start": "node lib",
     "test": "jest --coverage",
     "lint": "eslint \"**/*.js\"",
@@ -17,7 +16,6 @@
   "devDependencies": {
     "eslint": "^8.17.0",
     "jest": "^28.1.1",
-    "nodemon": "^2.0.16",
     "prettier": "^2.6.2"
   },
   "dependencies": {},
@@ -32,13 +30,10 @@
     },
     "collectCoverageFrom": [
       "**/*.js",
-      "!./directories.js",
+      "!./assets/directory.js",
       "!**/node_modules/**",
       "!**/coverage/**"
     ],
-    "testEnvironment": "node",
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    }
+    "testEnvironment": "node"
   }
 }
