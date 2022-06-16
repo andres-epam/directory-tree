@@ -1,6 +1,0 @@
-{
-    "watch": ["lib"],
-    "ext": ".js",
-    "ignore": [],
-    "exec": "node lib"
-  }

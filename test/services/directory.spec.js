@@ -5,7 +5,7 @@ const { DirectoryRepository } = require('../../lib/repositories/directory');
 const { DirectoryService } = require('../../lib/services/directory');
 const { listOutputMock } = require('../mocks/directory');
 
-jest.mock('../../lib/directory', () => ({ directory: {} }));
+jest.mock('../../assets/directory', () => ({ directory: {} }));
 const service = new DirectoryService();
 
 describe('Create | Directory Service', () => {

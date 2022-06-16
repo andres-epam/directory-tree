@@ -17,7 +17,7 @@ describe('Create | Directory Repository', () => {
   });
 
   test('should create a directory', () => {
-    jest.doMock('../../lib/directory', () => ({
+    jest.doMock('../../assets/directory', () => ({
       directory: {
         ...JSON.parse(JSON.stringify(directoryCreateDeleteInitialMock))
       }
@@ -46,7 +46,7 @@ describe('Create | Directory Repository', () => {
   });
 
   test('should fail creating a directory', () => {
-    jest.doMock('../../lib/directory', () => ({
+    jest.doMock('../../assets/directory', () => ({
       directory: {
         ...JSON.parse(JSON.stringify(directoryCreateDeleteInitialMock))
       }
@@ -66,7 +66,7 @@ describe('List | Directory Repository', () => {
 
   beforeEach(() => {
     jest.resetModules();
-    jest.doMock('../../lib/directory', () => ({
+    jest.doMock('../../assets/directory', () => ({
       directory: {
         ...JSON.parse(JSON.stringify(directoryListMock))
       }
@@ -88,7 +88,7 @@ describe('Move | Directory Repository', () => {
   });
 
   test('should move a directory', () => {
-    jest.doMock('../../lib/directory', () => ({
+    jest.doMock('../../assets/directory', () => ({
       directory: {
         ...directoryMoveInitialSuccessMock
       }
@@ -117,7 +117,7 @@ describe('Move | Directory Repository', () => {
   });
 
   test('should fail moving a directory', () => {
-    jest.doMock('../../lib/directory', () => ({
+    jest.doMock('../../assets/directory', () => ({
       directory: {
         ...directoryMoveInitialFailMock
       }
@@ -152,7 +152,7 @@ describe('Delete | Directory Repository', () => {
     jest.resetModules();
   });
   test('should delete a directory', () => {
-    jest.doMock('../../lib/directory', () => ({
+    jest.doMock('../../assets/directory', () => ({
       directory: {
         ...JSON.parse(JSON.stringify(directoryCreateDeleteInitialMock))
       }
@@ -173,7 +173,7 @@ describe('Delete | Directory Repository', () => {
   });
 
   test('should fail deleting a directory', () => {
-    jest.doMock('../../lib/directory', () => ({
+    jest.doMock('../../assets/directory', () => ({
       directory: {
         ...JSON.parse(JSON.stringify(directoryCreateDeleteInitialMock))
       }
