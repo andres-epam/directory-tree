@@ -40,9 +40,9 @@ The initial directory structure you can find it at path `./assets/directory.json
            // In this case, the initial value is an empty directory.
 }
 ```
-The app reads the directory initial value from the json file, then converts it in js object named `directory` (kind of singleton object) located in `./lib/directory`, it means that `directory` has an unique instance.
+The app gets the directory value from the js file named `directory` (kind of singleton object) located in `./assets/directory.js`, it means that `directory` has an unique instance.
 
-At same `directory.json` location, there is another file called `instructions.txt`, it's in charge of instructions that will be executed each one by line, it can be modified giving to app whatever instruction you want, the initial value is:
+At same `directory.js` location, there is another file called `instructions.txt`, it's in charge of instructions that will be executed each one by line, it can be modified giving to app whatever instruction you want, the initial value is:
 
 ```js
 CREATE fruits
@@ -94,7 +94,6 @@ Run `npm install` from rootpath of the project.
 |   :---   |   ---  |            ---               |
 | jest     | 28.1.1 | Unit tests                   |
 | eslint   | 8.17.0 | Code analyzer                |
-| nodemon  | 2.0.16 | Local app usage facilitation |
 | prettier | 2.6.2  | Code formatter               |
 
 ## Usage
@@ -163,11 +162,9 @@ foods
   squash
 ```
 
-To execute the app, there are 3 ways to do it, feel free to use any you want:
+To execute the app run the command:
 
 - `npm start`
-- `node directories.js`
-- `./start.sh`
 
 ## Test
 
@@ -182,10 +179,9 @@ File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered
 ----------------------------|---------|----------|---------|---------|-------------------
 All files                   |     100 |    98.07 |     100 |     100 |                   
  lib                        |     100 |      100 |     100 |     100 |                   
-  directory.js              |     100 |      100 |     100 |     100 |                   
   index.js                  |     100 |      100 |     100 |     100 |                   
- lib/constants              |     100 |      100 |     100 |     100 |
-  operationTypes.js         |     100 |      100 |     100 |     100 |
+ lib/constants              |     100 |      100 |     100 |     100 |                   
+  operationTypes.js         |     100 |      100 |     100 |     100 |                   
  lib/controllers            |     100 |      100 |     100 |     100 |
   directory.js              |     100 |      100 |     100 |     100 |
  lib/errors                 |     100 |       50 |     100 |     100 |
@@ -201,10 +197,10 @@ All files                   |     100 |    98.07 |     100 |     100 |
   directory.js              |     100 |      100 |     100 |     100 |
 ----------------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 8 passed, 8 total
-Tests:       34 passed, 34 total
+Test Suites: 7 passed, 7 total
+Tests:       33 passed, 33 total
 Snapshots:   0 total
-Time:        4.03 s
+Time:        2.202 s
 Ran all test suites.
 ```
 
